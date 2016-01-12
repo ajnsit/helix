@@ -1,11 +1,11 @@
 {-# LANGUAGE TemplateHaskell #-}
 {-# LANGUAGE RecordWildCards #-}
-module Network.Wai.Middleware.Routes.TH.RouteAttrs
+module Helix.TH.RouteAttrs
     ( mkRouteAttrsInstance
     ) where
 
-import Network.Wai.Middleware.Routes.TH.Types
-import Network.Wai.Middleware.Routes.Class
+import Helix.TH.Types
+import Helix.Class
 import Language.Haskell.TH.Syntax
 import Data.Set (fromList)
 import Data.Text (pack)

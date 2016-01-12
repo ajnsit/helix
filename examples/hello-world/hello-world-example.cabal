@@ -4,8 +4,8 @@ cabal-version : >=1.16
 build-type    : Simple
 license       : PublicDomain
 maintainer    : ajnsit@gmail.com
-synopsis      : Hello world example for wai-routes
-description   : Hello world example for wai-routes
+synopsis      : Hello world example for helix
+description   : Hello world example for helix
 category      : Web
 author        : Anupam Jain
 data-dir      : ""
@@ -13,7 +13,7 @@ data-dir      : ""
 executable hello-world-example
     build-depends    : base
                      , wai
-                     , wai-routes
+                     , helix
                      , wai-extra
                      , wai-app-static
                      , warp

@@ -4,15 +4,15 @@ cabal-version : >=1.16
 build-type    : Simple
 license       : PublicDomain
 maintainer    : ajnsit@gmail.com
-synopsis      : Kitchen sink example for wai-routes
-description   : Kitchen sink example for wai-routes
+synopsis      : Kitchen sink example for helix
+description   : Kitchen sink example for helix
 category      : Web
 author        : Anupam Jain
 data-dir      : ""
 
 executable kitchen-example
     build-depends    : base
-                     , wai-routes
+                     , helix
                      , warp
                      , text
     main-is          : Main.hs

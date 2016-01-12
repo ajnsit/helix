@@ -1,10 +1,10 @@
 -- | Check for overlapping routes.
-module Network.Wai.Middleware.Routes.Overlap
+module Helix.Overlap
     ( findOverlapNames
     , Overlap (..)
     ) where
 
-import Network.Wai.Middleware.Routes.TH.Types
+import Helix.TH.Types
 import Data.List (intercalate)
 
 data Flattened t = Flattened
@@ -63,7 +63,7 @@ piecesOverlap _ _ = True
 
 findOverlapNames :: [ResourceTree t] -> [(String, String)]
 findOverlapNames =
-    map go . findOverlapsF . filter fCheck . concatMap Network.Wai.Middleware.Routes.Overlap.flatten
+    map go . findOverlapsF . filter fCheck . concatMap Helix.Overlap.flatten
   where
     go (OverlapF x y) =
         (go' x, go' y)

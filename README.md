@@ -1,16 +1,16 @@
-[Wai-Routes](https://ajnsit.github.io/wai-routes) [![Hackage](https://img.shields.io/badge/hackage-v0.9.5-brightgreen.svg)](https://hackage.haskell.org/package/wai-routes) [![Hackage-Deps](https://img.shields.io/hackage-deps/v/wai-routes.svg)](http://packdeps.haskellers.com/feed?needle=wai-routes) [![Build Status](https://img.shields.io/travis/ajnsit/wai-routes.svg)](https://travis-ci.org/ajnsit/wai-routes) [![Join the chat at https://gitter.im/ajnsit/wai-routes](https://img.shields.io/badge/gitter-join%20chat%20%E2%86%A3-blue.svg)](https://gitter.im/ajnsit/wai-routes)
+[Helix](https://ajnsit.github.io/helix) [![Hackage](https://img.shields.io/badge/hackage-v0.9.5-brightgreen.svg)](https://hackage.haskell.org/package/helix) [![Hackage-Deps](https://img.shields.io/hackage-deps/v/helix.svg)](http://packdeps.haskellers.com/feed?needle=helix) [![Build Status](https://img.shields.io/travis/ajnsit/helix.svg)](https://travis-ci.org/ajnsit/helix) [![Join the chat at https://gitter.im/ajnsit/helix](https://img.shields.io/badge/gitter-join%20chat%20%E2%86%A3-blue.svg)](https://gitter.im/ajnsit/helix)
 ====================================
 
-Wai-routes is a micro web framework for Haskell that focuses on typesafe URLs.
+Helix is a micro web framework for Haskell that focuses on typesafe URLs.
 
-Wai-routes is based on the Haskell [Web Application Interface](http://hackage.haskell.org/package/wai) and uses it for most of the heavy lifting. It also provides a convenient but thin veneer over most of the wai API so it is unnecessary to directly use raw wai APIs when building web apps.
+Helix is based on the Haskell [Web Application Interface](http://hackage.haskell.org/package/wai) and uses it for most of the heavy lifting. It also provides a convenient but thin veneer over most of the wai API so it is unnecessary to directly use raw wai APIs when building web apps.
 
-Much of Wai-route's typesafe URL functionality was pulled from the corresponding features in [Yesod](http://www.yesodweb.com/), and indeed the underlying aim of wai-routes is - *"To provide a similar level of typesafe URL functionality to Wai applications as is available to Yesod applications."*.
+Much of Helix's typesafe URL functionality was pulled from the corresponding features in [Yesod](http://www.yesodweb.com/), and indeed the underlying aim of helix is - *"To provide a similar level of typesafe URL functionality to Wai applications as is available to Yesod applications."*. Helix however, adds new routing features of its own such as the ability to use subsites within route hierarchies.
 
 Features
 ==========
 
-Wai-routes adds the following features on top of wai -
+Helix adds the following features on top of wai -
 
   - Typesafe URLs, including automatic boilerplate generation using TH. Including features such as -
     - Nested Routes
@@ -27,7 +27,7 @@ Wai-routes adds the following features on top of wai -
 Performance
 ===========
 
-When it comes to performance, Wai-routes compares quite favorably with other Haskell web development micro frameworks.
+When it comes to performance, Helix compares quite favorably with other Haskell web development micro frameworks.
 
 See more details here - [philopon/apiary-benchmark](https://github.com/philopon/apiary-benchmark)
 
@@ -37,37 +37,37 @@ See more details here - [philopon/apiary-benchmark](https://github.com/philopon/
 Example Usage
 =============
 
-Wai-routes comes with several examples in the `examples/` directory. New examples are being added regularly.
+Helix comes with several examples in the `examples/` directory. New examples are being added regularly.
 
-**Example 1. Hello World** - [Code](https://github.com/ajnsit/wai-routes/tree/master/examples/hello-world/src)
+**Example 1. Hello World** - [Code](https://github.com/ajnsit/helix/tree/master/examples/hello-world/src)
 
 A simple hello-world web app with two interlinked pages. This provides the simplest example of using routing and linking between pages with typesafe routes.
 
-**Example 2. Hello World with Subsites** - [Code](https://github.com/ajnsit/wai-routes/tree/master/examples/subsites/src)
+**Example 2. Hello World with Subsites** - [Code](https://github.com/ajnsit/helix/tree/master/examples/subsites/src)
 
 Similar functionality as the first example, but uses a hello world subsites to provide the hello world functionality. A subsite is an independently developed site that can be embedded into a parent site as long as the parent site satisfies a particular api contract. It's easy to swap out subsites for different functionality as long as the api contract remains constant.
 
-**Example 3. Using Blaze-HTML to generate HTML** - [Code](https://github.com/ajnsit/wai-routes/tree/master/examples/blaze-html/src)
+**Example 3. Using Blaze-HTML to generate HTML** - [Code](https://github.com/ajnsit/helix/tree/master/examples/blaze-html/src)
 
 A simple example of how to generate HTML using blaze-html combinators in your handlers.
 
-**Example 4. Using Shakespearean Templates (hamlet, cassius, lucius, julius) to generate HTML/CSS/JS** - [Code](https://github.com/ajnsit/wai-routes/tree/master/examples/shakespeare/src)
+**Example 4. Using Shakespearean Templates (hamlet, cassius, lucius, julius) to generate HTML/CSS/JS** - [Code](https://github.com/ajnsit/helix/tree/master/examples/shakespeare/src)
 
 A simple example of how to generate HTML/CSS/JS using shakespearean templates. You can use both external and inline templates.
 
-**Example 5. Building a JSON REST Service** - [Code](https://github.com/ajnsit/wai-routes/tree/master/examples/rest-json/src)
+**Example 5. Building a JSON REST Service** - [Code](https://github.com/ajnsit/helix/tree/master/examples/rest-json/src)
 
-Provides a simple example of how to build JSON REST services with wai-routes. Uses Aeson for JSON conversion. Note that this example just demonstrates the web facing side of the application. It doesn't permanently persist data, and is also not threadsafe. You must use a more robust data storage mechanism in production! An example of doing this with a Relational DB adapter (like persistent) is in the works.
+Provides a simple example of how to build JSON REST services with helix. Uses Aeson for JSON conversion. Note that this example just demonstrates the web facing side of the application. It doesn't permanently persist data, and is also not threadsafe. You must use a more robust data storage mechanism in production! An example of doing this with a Relational DB adapter (like persistent) is in the works.
 
-**Example 6. Stream a response** - [Code](https://github.com/ajnsit/wai-routes/tree/master/examples/streaming-response/src)
+**Example 6. Stream a response** - [Code](https://github.com/ajnsit/helix/tree/master/examples/streaming-response/src)
 
-Wai has had the ability to stream content for a long time. Now wai-routes exposes this functionality with the `stream` function. This example shows how to stream content in a handler. Note that most browsers using default settings will not show content as it is being streamed. You can use "curl" to observe the effect of streaming. E.g. - `curl localhost:8080` will dump the data as it is being streamed from the server.
+Wai has had the ability to stream content for a long time. Now helix exposes this functionality with the `stream` function. This example shows how to stream content in a handler. Note that most browsers using default settings will not show content as it is being streamed. You can use "curl" to observe the effect of streaming. E.g. - `curl localhost:8080` will dump the data as it is being streamed from the server.
 
-**Example 7. Kitchen sink** - [Code](https://github.com/ajnsit/wai-routes/tree/master/examples/kitchen/src)
+**Example 7. Kitchen sink** - [Code](https://github.com/ajnsit/helix/tree/master/examples/kitchen/src)
 
-*Work in progress*. Demonstrates all major features in wai-routes.
+*Work in progress*. Demonstrates all major features in helix.
 
-**Example 8. Unrouted** - [Code](https://github.com/ajnsit/wai-routes/tree/master/examples/unrouted/src)
+**Example 8. Unrouted** - [Code](https://github.com/ajnsit/helix/tree/master/examples/unrouted/src)
 
 Demonstrates "unrouted" applications. These require no TH, or GHC extensions. Basically allow you to sequence request handlers in a cascade, with each handler having the full functionality of HandlerM monad available to them. Each handler also has access to untyped (but parsed) route information. Unrouted handlers are freely mixable with typesafe routing.
 
@@ -75,7 +75,7 @@ Demonstrates "unrouted" applications. These require no TH, or GHC extensions. Ba
 Deployment
 ==========
 
-The current recommended route (pun not intended) for deploying wai-routes apps is [keter](http://hackage.haskell.org/package/keter). You need to read the port from the environment variables -
+The current recommended route (pun not intended) for deploying helix apps is [keter](http://hackage.haskell.org/package/keter). You need to read the port from the environment variables -
 
     -- Run the application
     main :: IO ()
@@ -129,7 +129,7 @@ Changelog
 * 0.4.1 : showRoute now returns "/" instead of ""
 * 0.4.0 : Wai 2 compatibility. Replaced 'liftResourceT' with 'lift'
 * 0.3.4 : Added 'liftResourceT' to lift a ResourceT into HandlerM
-* 0.3.3 : Better exports from the Network.Wai.Middleware.Routes module
+* 0.3.3 : Better exports from the Helix module
 * 0.3.2 : Added HandlerM Monad which makes it easier to build Handlers
 * 0.3.1 : Removed internal 'App' synonym which only muddied the types. Added common content types for convenience.
 * 0.3.0 : yesod-routes 1.2 compatibility. Abstracted request data. Created `runNext` which skips to the next app in the wai stack

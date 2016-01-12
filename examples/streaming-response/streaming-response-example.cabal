@@ -4,8 +4,8 @@ cabal-version : >=1.16
 build-type    : Simple
 license       : PublicDomain
 maintainer    : ajnsit@gmail.com
-synopsis      : Streaming response example for wai-routes
-description   : Streaming response example for wai-routes
+synopsis      : Streaming response example for helix
+description   : Streaming response example for helix
 category      : Web
 author        : Anupam Jain
 data-dir      : ""
@@ -13,7 +13,7 @@ data-dir      : ""
 executable streaming-response-example
     build-depends    : base
                      , wai
-                     , wai-routes
+                     , helix
                      , wai-extra
                      , wai-app-static
                      , warp

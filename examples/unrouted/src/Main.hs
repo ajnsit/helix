@@ -15,7 +15,7 @@ import Control.Monad.IO.Class (liftIO)
 import qualified Data.Text as T
 import qualified Data.Vault.Lazy as V
 
-import Network.Wai.Middleware.Routes
+import Helix
 import Network.Wai.Handler.Warp
 
 -- Run the application

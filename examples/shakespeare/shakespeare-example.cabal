@@ -4,15 +4,15 @@ cabal-version : >=1.16
 build-type    : Simple
 license       : PublicDomain
 maintainer    : ajnsit@gmail.com
-synopsis      : Shakespearean templates example for wai-routes
-description   : Shakespearean templates example for wai-routes
+synopsis      : Shakespearean templates example for helix
+description   : Shakespearean templates example for helix
 category      : Web
 author        : Anupam Jain
 data-dir      : ""
 
 executable shakespeare-example
     build-depends    : base
-                     , wai-routes
+                     , helix
                      , wai-extra
                      , wai-app-static
                      , warp

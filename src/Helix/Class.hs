@@ -1,6 +1,6 @@
 {-# LANGUAGE TypeFamilies #-}
 {-# LANGUAGE FlexibleContexts #-}
-module Network.Wai.Middleware.Routes.Class
+module Helix.Class
     ( RenderRoute (..)
     , ParseRoute (..)
     , RouteAttrs (..)

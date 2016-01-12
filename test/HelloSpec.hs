@@ -6,7 +6,7 @@ module HelloSpec (spec) where
 
 import Data.Maybe (fromMaybe)
 import Network.Wai (Application)
-import Network.Wai.Middleware.Routes
+import Helix
 import Data.Aeson (Value(Number), (.=), object)
 
 import Data.Text (Text)
@@ -76,7 +76,7 @@ handleInfoRequest = runHandlerM $ do
   Just (DefaultRoute (_,query)) <- maybeRoute
   case lookup "info" query of
     -- If an override param "info" was supplied then display info
-    Just _ -> plain "Info was requested - You are running wai-routes tests"
+    Just _ -> plain "Info was requested - You are running helix tests"
     -- Else, move on to the next handler (i.e. do nothing special)
     Nothing -> next
 
@@ -101,7 +101,7 @@ spec = with application $ do
 
   describe "GET /?info" $
     it "responds with info when requested" $
-      get "/?info" `shouldRespondWith` "Info was requested - You are running wai-routes tests" {matchStatus = 200, matchHeaders = ["Content-Type" <:> "text/plain; charset=utf-8"]}
+      get "/?info" `shouldRespondWith` "Info was requested - You are running helix tests" {matchStatus = 200, matchHeaders = ["Content-Type" <:> "text/plain; charset=utf-8"]}
 
   describe "POST /post?name=foobar" $
     it "can read query parameters" $

@@ -4,15 +4,15 @@ cabal-version : >=1.16
 build-type    : Simple
 license       : PublicDomain
 maintainer    : ajnsit@gmail.com
-synopsis      : Subsites examples for wai-routes
-description   : Subsites examples for wai-routes
+synopsis      : Subsites examples for helix
+description   : Subsites examples for helix
 category      : Web
 author        : Anupam Jain
 data-dir      : ""
 
 executable subsites-example
     build-depends    : base
-                     , wai-routes
+                     , helix
                      , wai-app-static
                      , wai-extra
                      , warp

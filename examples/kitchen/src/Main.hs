@@ -1,18 +1,18 @@
--- These extensions are needed for wai-routes
+-- These extensions are needed for helix
 {-# LANGUAGE TypeFamilies, MultiParamTypeClasses, ViewPatterns, TemplateHaskell, QuasiQuotes, RankNTypes #-}
 -- This extension is for convenience
 {-# LANGUAGE OverloadedStrings #-}
 
 module Main where
 {-
-  Demonstrates all the major features of wai-routes (WIP)
+  Demonstrates all the major features of helix (WIP)
 -}
 
 import Data.Maybe (fromMaybe)
 import Data.Monoid (mconcat)
 import Data.Text (Text)
 
-import Network.Wai.Middleware.Routes
+import Helix
 import Network.Wai.Handler.Warp (run)
 
 -------------
@@ -21,7 +21,7 @@ import Network.Wai.Handler.Warp (run)
 
 -- The master route
 data MasterRoute = MasterRoute
--- wai-routes uses compile time checks to avoid routes overlap
+-- helix uses compile time checks to avoid routes overlap
 -- We can use parseRoutesNoCheck, if we are certain we want overlapping routes
 mkRoute "MasterRoute" [parseRoutesNoCheck|
 /             RootR        GET POST DELETE PUT

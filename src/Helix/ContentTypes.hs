@@ -1,7 +1,7 @@
 {-# LANGUAGE OverloadedStrings, TypeFamilies #-}
 
 {- |
-Module      :  Network.Wai.Middleware.Routes.ContentTypes
+Module      :  Helix.ContentTypes
 Copyright   :  (c) Anupam Jain 2013
 License     :  MIT (see the file LICENSE)
 
@@ -11,7 +11,7 @@ Portability :  non-portable (uses ghc extensions)
 
 Defines the commonly used content types
 -}
-module Network.Wai.Middleware.Routes.ContentTypes
+module Helix.ContentTypes
     ( -- * Construct content Type
       acceptContentType
     , contentType, contentTypeFromFile

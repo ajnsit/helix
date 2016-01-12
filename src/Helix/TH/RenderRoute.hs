@@ -1,5 +1,5 @@
 {-# LANGUAGE TemplateHaskell, CPP #-}
-module Network.Wai.Middleware.Routes.TH.RenderRoute
+module Helix.TH.RenderRoute
     ( -- ** RenderRoute
       mkRenderRouteInstance
     , mkRenderRouteInstance'
@@ -7,13 +7,13 @@ module Network.Wai.Middleware.Routes.TH.RenderRoute
     , mkRenderRouteClauses
     ) where
 
-import Network.Wai.Middleware.Routes.TH.Types
+import Helix.TH.Types
 import Language.Haskell.TH.Syntax
 import Data.Maybe (maybeToList)
 import Control.Monad (replicateM)
 import Data.Text (pack)
 import Web.PathPieces (PathPiece (..), PathMultiPiece (..))
-import Network.Wai.Middleware.Routes.Class
+import Helix.Class
 #if __GLASGOW_HASKELL__ < 710
 import Data.Monoid (mconcat)
 #endif

@@ -1,6 +1,6 @@
 {-# LANGUAGE OverloadedStrings, GeneralizedNewtypeDeriving, CPP #-}
 {- |
-Module      :  Network.Wai.Middleware.Routes.Handler
+Module      :  Helix.Handler
 Copyright   :  (c) Anupam Jain 2013
 License     :  MIT (see the file LICENSE)
 
@@ -10,7 +10,7 @@ Portability :  non-portable (uses ghc extensions)
 
 Provides a HandlerM Monad that makes it easy to build Handlers
 -}
-module Network.Wai.Middleware.Routes.Handler
+module Helix.Handler
     ( HandlerM()             -- | A Monad that makes it easier to build a Handler
     , runHandlerM            -- | Run a HandlerM to get a Handler
     , mountedAppHandler      -- | Convert a full wai application to a HandlerS
@@ -70,9 +70,9 @@ import Network.Wai (Application, Request, Response, responseRaw, responseFile, r
 #if MIN_VERSION_wai(3,0,1)
 import Network.Wai (strictRequestBody, vault)
 #endif
-import Network.Wai.Middleware.Routes.Routes (Env(..), RequestData, HandlerS, waiReq, currentRoute, runNext, ResponseHandler, showRoute, showRouteQuery, readRoute, readQueryString)
-import Network.Wai.Middleware.Routes.Class (Route, RenderRoute, ParseRoute, RouteAttrs(..))
-import Network.Wai.Middleware.Routes.ContentTypes (acceptContentType, contentType, contentTypeFromFile, typeHtml, typeJson, typePlain, typeCss, typeJavascript, typeAll)
+import Helix.Routes (Env(..), RequestData, HandlerS, waiReq, currentRoute, runNext, ResponseHandler, showRoute, showRouteQuery, readRoute, readQueryString)
+import Helix.Class (Route, RenderRoute, ParseRoute, RouteAttrs(..))
+import Helix.ContentTypes (acceptContentType, contentType, contentTypeFromFile, typeHtml, typeJson, typePlain, typeCss, typeJavascript, typeAll)
 
 import Control.Monad (liftM, when)
 import Control.Monad.Loops (unfoldWhileM)
@@ -470,7 +470,7 @@ javascript :: Text -> HandlerM sub master ()
 javascript = asContent typeJavascript
 
 -- | Sets the content-type header to the given Bytestring
---  (look in Network.Wai.Middleware.Routes.ContentTypes for examples)
+--  (look in Helix.ContentTypes for examples)
 --  And sets the body of the response to the given Text
 asContent :: ByteString -> Text -> HandlerM sub master ()
 asContent ctype content = do

@@ -4,15 +4,15 @@ cabal-version : >=1.16
 build-type    : Simple
 license       : PublicDomain
 maintainer    : ajnsit@gmail.com
-synopsis      : Blaze-Html example for wai-routes
-description   : Blaze-Html example for wai-routes
+synopsis      : Blaze-Html example for helix
+description   : Blaze-Html example for helix
 category      : Web
 author        : Anupam Jain
 data-dir      : ""
 
 executable blaze-html-example
     build-depends    : base
-                     , wai-routes
+                     , helix
                      , wai-extra
                      , wai-app-static
                      , warp

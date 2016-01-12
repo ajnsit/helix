@@ -5,7 +5,7 @@ module Main where
   Note: Look at the code in subsites/ for an example of building the same functionality as a subsite.
 -}
 
-import Network.Wai.Middleware.Routes
+import Helix
 import Network.Wai.Handler.Warp
 import qualified Data.Text as T
 import Data.Maybe (fromMaybe)
@@ -91,7 +91,7 @@ handleInfoRequest = runHandlerM $ do
   Just (DefaultRoute (_,query)) <- maybeRoute
   case lookup "info" query of
     -- If an override param "info" was supplied then display info
-    Just _ -> plain "Wai-routes, hello world example, handleInfoRequest"
+    Just _ -> plain "Helix, hello world example, handleInfoRequest"
     -- Else, move on to the next handler (i.e. do nothing special)
     Nothing -> next
 

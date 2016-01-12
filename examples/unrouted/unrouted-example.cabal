@@ -4,8 +4,8 @@ cabal-version : >=1.16
 build-type    : Simple
 license       : PublicDomain
 maintainer    : ajnsit@gmail.com
-synopsis      : Using "unrouted" handlers example for wai-routes
-description   : Using "unrouted" handlers example for wai-routes
+synopsis      : Using "unrouted" handlers example for helix
+description   : Using "unrouted" handlers example for helix
 category      : Web
 author        : Anupam Jain
 data-dir      : ""
@@ -13,7 +13,7 @@ data-dir      : ""
 executable unrouted-example
     build-depends    : base
                      , wai
-                     , wai-routes
+                     , helix
                      , wai-extra
                      , wai-app-static
                      , warp

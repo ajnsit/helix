@@ -1,5 +1,5 @@
 {- |
-Module      :  Network.Wai.Middleware.Routes
+Module      :  Helix
 Copyright   :  (c) Anupam Jain 2013
 License     :  MIT (see the file LICENSE)
 
@@ -9,7 +9,7 @@ Portability :  non-portable (uses ghc extensions)
 
 This package provides typesafe URLs for Wai applications.
 -}
-module Network.Wai.Middleware.Routes
+module Helix
     ( -- * Declaring Routes using Template Haskell
       parseRoutes
     , parseRoutesFile        -- | Parse routes declared in a file
@@ -50,7 +50,7 @@ module Network.Wai.Middleware.Routes
     , RouteM
     , DefaultMaster(..)
     , Route(DefaultRoute)
-    , handler                -- | Add a wai-routes handler
+    , handler                -- | Add a helix handler
     , catchall               -- | Catch all routes with the supplied application
     , defaultAction          -- | A synonym for `catchall`, kept for backwards compatibility
     , middleware             -- | Add another middleware to the app
@@ -110,9 +110,9 @@ module Network.Wai.Middleware.Routes
   )
   where
 
-import Network.Wai.Middleware.Routes.Routes
-import Network.Wai.Middleware.Routes.Monad
-import Network.Wai.Middleware.Routes.Handler
+import Helix.Routes
+import Helix.Monad
+import Helix.Handler
 import Network.HTTP.Types.Status
 import Network.Wai.Middleware.RequestLogger
 import Network.Wai.Application.Static

@@ -6,7 +6,7 @@
 {-# LANGUAGE RankNTypes #-}
 {-# LANGUAGE CPP #-}
 {- |
-Module      :  Network.Wai.Middleware.Routes.Routes
+Module      :  Helix.Routes
 Copyright   :  (c) Anupam Jain 2013
 License     :  MIT (see the file LICENSE)
 
@@ -16,7 +16,7 @@ Portability :  non-portable (uses ghc extensions)
 
 This package provides typesafe URLs for Wai applications.
 -}
-module Network.Wai.Middleware.Routes.Routes
+module Helix.Routes
     ( -- * Quasi Quoters
       parseRoutes            -- | Parse Routes declared inline
     , parseRoutesFile        -- | Parse routes declared in a file
@@ -58,7 +58,7 @@ module Network.Wai.Middleware.Routes.Routes
     , currentRoute           -- | Extract the current `Route` from `RequestData`
     , runNext                -- | Run the next application in the stack
 
-    -- * Not exported outside wai-routes
+    -- * Not exported outside helix
     , runHandler
     , readQueryString
     )
@@ -68,10 +68,10 @@ module Network.Wai.Middleware.Routes.Routes
 import Network.Wai (ResponseReceived, Middleware, Application, pathInfo, requestMethod, requestMethod, Response, Request(..))
 import Network.HTTP.Types (Query, decodePath, encodePath, queryTextToQuery, queryToQueryText)
 
--- Network.Wai.Middleware.Routes
-import Network.Wai.Middleware.Routes.Class (Route, RenderRoute(..), ParseRoute(..), RouteAttrs(..))
-import Network.Wai.Middleware.Routes.Parse (parseRoutes, parseRoutesNoCheck, parseRoutesFile, parseRoutesFileNoCheck, parseType)
-import Network.Wai.Middleware.Routes.TH (mkRenderRouteInstance, mkParseRouteInstance, mkRouteAttrsInstance, mkDispatchClause, ResourceTree(..), MkDispatchSettings(..), defaultGetHandler)
+-- Helix
+import Helix.Class (Route, RenderRoute(..), ParseRoute(..), RouteAttrs(..))
+import Helix.Parse (parseRoutes, parseRoutesNoCheck, parseRoutesFile, parseRoutesFileNoCheck, parseType)
+import Helix.TH (mkRenderRouteInstance, mkParseRouteInstance, mkRouteAttrsInstance, mkDispatchClause, ResourceTree(..), MkDispatchSettings(..), defaultGetHandler)
 
 -- Text and Bytestring
 import Data.ByteString (ByteString)
