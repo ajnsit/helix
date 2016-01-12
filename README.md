@@ -1,11 +1,11 @@
 [Helix](https://ajnsit.github.io/helix) [![Hackage](https://img.shields.io/badge/hackage-v0.9.5-brightgreen.svg)](https://hackage.haskell.org/package/helix) [![Hackage-Deps](https://img.shields.io/hackage-deps/v/helix.svg)](http://packdeps.haskellers.com/feed?needle=helix) [![Build Status](https://img.shields.io/travis/ajnsit/helix.svg)](https://travis-ci.org/ajnsit/helix) [![Join the chat at https://gitter.im/ajnsit/helix](https://img.shields.io/badge/gitter-join%20chat%20%E2%86%A3-blue.svg)](https://gitter.im/ajnsit/helix)
 ====================================
 
-Helix is a micro web framework for Haskell that focuses on typesafe URLs.
+Helix is a micro web framework for Haskell. It was extracted from [Wai Routes](http://hackage.haskell.org/package/wai-routes) and aims to provide functionality beyond simple typesafe URLs.
 
 Helix is based on the Haskell [Web Application Interface](http://hackage.haskell.org/package/wai) and uses it for most of the heavy lifting. It also provides a convenient but thin veneer over most of the wai API so it is unnecessary to directly use raw wai APIs when building web apps.
 
-Much of Helix's typesafe URL functionality was pulled from the corresponding features in [Yesod](http://www.yesodweb.com/), and indeed the underlying aim of helix is - *"To provide a similar level of typesafe URL functionality to Wai applications as is available to Yesod applications."*. Helix however, adds new routing features of its own such as the ability to use subsites within route hierarchies.
+Much of Helix's typesafe URL functionality was pulled from the corresponding features in [Yesod](http://www.yesodweb.com/). Helix however, adds new routing features as well such as the ability to use subsites within route hierarchies.
 
 Features
 ==========
